@@ -18,7 +18,6 @@ export const inventorySchema = new Schema<TInventory>({
   quantity: {
     type: Number,
     required: true,
-    trim: true,
   },
   inStock: {
     type: Boolean,
@@ -56,4 +55,4 @@ export const productSchema = new Schema<TProduct>({
   inventory: inventorySchema,
 });
 
-export const Product = model<TProduct>('Product', productSchema);
+export const productModel = model<TProduct>('Product', productSchema);
