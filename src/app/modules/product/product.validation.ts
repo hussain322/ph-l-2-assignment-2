@@ -15,7 +15,6 @@ const inventoryValidationSchema = z.object({
   inStock: z.boolean(),
 });
 
-// Define a schema for the product itself
 const productValidationSchema = z.object({
   name: z
     .string()
