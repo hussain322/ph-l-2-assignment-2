@@ -8,10 +8,14 @@ const createOrderIntoDB = async (orderData: TOrder) => {
 };
 
 //get all orders
-const getAllOrdersFromDB = async (userEmail: string | undefined) => {
+const getAllOrdersFromDB = async (userEmail: string | null) => {
   if (userEmail) {
     const result = await orderModel.find({ email: userEmail });
-    return result;
+    if (result && result.length > 0) {
+      return result;
+    } else {
+      return null;
+    }
   }
   const result = await orderModel.find();
   return result;
