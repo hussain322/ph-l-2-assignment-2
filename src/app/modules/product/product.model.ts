@@ -1,4 +1,4 @@
-import { Schema, model, connect } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import { TInventory, TProduct, TVariant } from './product.interface';
 
 export const variantsSchema = new Schema<TVariant>({
