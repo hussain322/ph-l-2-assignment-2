@@ -103,8 +103,50 @@ bash
 
 * Method: `DELETE`
 
-### 2. Search a product
+### 5. Search a product
 
 - End points: `/api/products?searchTerm=iphone`
 
 * Method: `GET`
+
+## Order Management:
+
+### 1. Create a new product
+
+- End points: `/api/orders`
+- Method: `POST`
+- Sample Body Request:
+
+```
+{
+    "email": "level2@programming-hero.com",
+    "productId": "5fd67e890b60c903cd8544a3",
+    "price": 999,
+    "quantity": 1
+}
+
+```
+
+### 2. Retrieve All Orders
+
+- End points: `/api/orders`
+
+* Method: `GET`
+
+### 3. Retrieve Orders by User Email
+
+- End points: `/api/orders?email=level2@programming-hero.com`
+
+* Method: `GET`
+
+## Validation and Error Handling
+
+#### Validation
+
+- Zod is used to validate incoming data for product and order creation and updating operations.
+
+### Error handling:
+
+- Gracefully handles validation errors and provides meaningful error messages.
+
+- Provides error responses for scenarios like insufficient stock and not found errors.
