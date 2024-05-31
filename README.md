@@ -40,7 +40,7 @@ bash
 
 bash
 
-`npm run start:prod`
+`npm run start:dev`
 
 ### 7. The server should now be running. You can access the API endpoints at http://localhost:5000.
 
