@@ -18,7 +18,7 @@ const createOrder = async (req: Request, res: Response) => {
       if (order.quantity > (product?.inventory?.quantity as number)) {
         res.status(400).json({
           success: false,
-          message: 'Product quantity is not available in inventory',
+          message: 'Insufficient quantity available in inventory',
           data: null,
         });
       } else {
@@ -47,7 +47,7 @@ const createOrder = async (req: Request, res: Response) => {
         } else {
           res.status(400).json({
             success: false,
-            message: 'Product Id not match with Order Id',
+            message: 'Order not found',
             data: null,
           });
         }
@@ -55,7 +55,7 @@ const createOrder = async (req: Request, res: Response) => {
     } else {
       res.status(400).json({
         success: false,
-        message: 'Product Id not match with Order Id',
+        message: 'Order not found',
         data: null,
       });
     }
